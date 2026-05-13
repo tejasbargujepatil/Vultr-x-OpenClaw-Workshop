@@ -9,17 +9,13 @@
 # ☁️ Cloud Native Day Pune 2026
 **In collaboration with Vultr**
 
-<br/>
-
 ![Date](https://img.shields.io/badge/📅%20Date-31%20May%202026-0C447C?style=flat-square)
 ![Time](https://img.shields.io/badge/🕙%20Time-09:30%20AM%20–%2003:00%20PM%20IST-0C447C?style=flat-square)
 ![Venue](https://img.shields.io/badge/📍%20Venue-JW%20Marriott%20Pune-0C447C?style=flat-square)
 
-<br/>
-
 ### 🚀 [REGISTER HERE →](https://forms.gle/XfaczLoLoEu71AT78)
 
-> **Invite-only event.** Confirmations sent by **20 May 2026**.
+> **Invite-only.** Confirmations sent by **20 May 2026**.
 
 </div>
 
@@ -29,9 +25,10 @@
 
 - [About the Event](#-about-the-event)
 - [Agenda](#️-agenda)
+- [Organizer Checklist](#-organizer-checklist)
 - [Pre-Workshop Setup](#️-pre-workshop-setup)
-- [OpenClaw Setup](#-openclaw-setup)
-- [Project Structure](#-project-structure)
+- [Deploying OpenClaw on Vultr](#-deploying-openclaw-on-vultr)
+- [Using OpenClaw](#-using-openclaw)
 - [Troubleshooting](#️-troubleshooting)
 - [Code of Conduct](#-code-of-conduct)
 - [Important Links](#-important-links)
@@ -40,14 +37,11 @@
 
 ## 🌟 About the Event
 
-**Cloud Native Day Pune 2026** is Pune's flagship full-day cloud-native conference, organised by Cloud Native Pune (CNCF Community Group) in collaboration with **Vultr**.
+**Cloud Native Day Pune 2026** is organised by Cloud Native Pune (CNCF Community Group) in collaboration with **Vultr**.
 
-Bringing together developers, SREs, platform engineers, and cloud enthusiasts for technical talks, hands-on workshops, and real-world cloud-native stories.
+Full-day in-person conference for developers, SREs, platform engineers, and cloud enthusiasts — technical talks, hands-on workshop, and lightning sessions.
 
-**Topics:** Kubernetes · Platform Engineering · Observability · AI + Cloud Native · Security · CNCF Ecosystem
-
-> [!IMPORTANT]
-> This is an **invite-only** event. Submit the registration form → team reviews → confirmation by **20 May 2026**. Only confirmed attendees receive entry details.
+> **Invite-only.** Register → team reviews → confirmation by **20 May 2026**. Only confirmed attendees receive entry details.
 
 ---
 
@@ -62,99 +56,129 @@ Bringing together developers, SREs, platform engineers, and cloud enthusiasts fo
 | `TBA` | Lightning Sessions |
 | `03:00 PM` | Networking & Closing |
 
-> Agenda will be updated as confirmations come in. Watch the [event page](https://ocgroups.dev/cncf/group/p5hsakp/event/xavkwq6).
+> Agenda updated as confirmations come in. See [event page](https://ocgroups.dev/cncf/group/p5hsakp/event/xavkwq6).
+
+---
+
+## ✅ Organizer Checklist
+
+### Tech & Connectivity
+- [ ] WiFi access confirmed for participants
+- [ ] Backup hotspot ready (2 preferred — different carriers)
+- [ ] Projector working and tested
+- [ ] HDMI / USB-C / VGA adapters available
+- [ ] Power strips / extension boards at each table
+
+### Venue & Logistics
+- [ ] Water bottles / refreshments confirmed with venue
+- [ ] Check-in desk set up — volunteer assigned for entry management
+- [ ] Printed attendee list ready for entry verification (no walk-ins)
+- [ ] Volunteer name tags / badges prepared
+- [ ] Printed materials / banners in place
+
+### Post-Event
+- [ ] Volunteer assigned to take photos throughout the day
+- [ ] Volunteer assigned to post on LinkedIn live during the event
 
 ---
 
 ## ⚙️ Pre-Workshop Setup
 
-> [!WARNING]
-> Complete all steps **before 31 May**. No time for installations on the day.
-> Arrive at 09:30 AM if you need help from mentors.
+> Complete before **31 May**. Only a Vultr account is needed — no local installs required.
 
-### Required Accounts
+### Required Account
 
 | Platform | Link | Required |
 |:---|:---|:---:|
-| GitHub | [github.com](https://github.com) | ✅ |
 | Vultr | [vultr.com](https://www.vultr.com) | ✅ |
-| Docker Hub | [hub.docker.com](https://hub.docker.com) | Optional |
 
-### Required Software
+> Create your Vultr account before arriving. That's all you need.
 
-| Tool | Version | Link |
-|:---|:---|:---|
-| Node.js | v22.14+ (v24 recommended) | [nodejs.org](https://nodejs.org) |
-| Git | Latest | [git-scm.com](https://git-scm.com) |
-| Docker Desktop | v24+ | [docker.com](https://www.docker.com/products/docker-desktop) |
-| VS Code | Latest | [code.visualstudio.com](https://code.visualstudio.com) |
+---
 
-**VS Code Extensions:** `Docker` · `YAML` · `Kubernetes`
+## 🚀 Deploying OpenClaw on Vultr
 
-### System Requirements
+> This is done **during the workshop**. Steps below are for reference.
 
-| | Minimum |
+**Step 1 — Log in to Vultr**
+
+Go to [console.vultr.com](https://console.vultr.com) and log in.
+
+---
+
+**Step 2 — Go to Marketplace**
+
+- Click **"Deploy"** in the top nav → Select **"Instances"**
+- Choose the **"Marketplace"** tab
+- Search for **OpenClaw** and select it
+
+---
+
+**Step 3 — Configure your instance**
+
+- Choose a server location
+- Select a plan *(minimum: 1 CPU, 1024MB RAM — $6/mo)*
+- Click **Deploy Now**
+
+---
+
+**Step 4 — Wait for deployment**
+
+Allow up to **5 minutes** for the instance to become available.
+
+---
+
+**Step 5 — Access OpenClaw**
+
+Once deployed, open your instance link and log in:
+
+```
+Username: clawmine
+Password: (shown on your Vultr instance page)
+```
+
+---
+
+**Step 6 — Access Code Server** *(Browser-based VS Code)*
+
+A browser-based VS Code with terminal is included. Launch it from your instance page.
+
+```
+Password: (shown on your Vultr instance page)
+```
+
+---
+
+## 💬 Using OpenClaw
+
+### Essential Chat Commands
+
+| Command | Use |
 |:---|:---|
-| RAM | 8 GB |
-| Free Storage | 10 GB+ |
-| Internet | Stable |
-| Battery | Fully charged |
+| `/new` | Start a fresh session |
+| `/compact` | Summarize old messages to free up context |
+| `/status` | Check session info, model, token usage |
+| `/help` | See all available commands |
+| `stop` | Abort current response mid-stream |
 
-> **Windows users:** WSL2 recommended. See [docs.openclaw.ai/platforms/windows](https://docs.openclaw.ai/platforms/windows)
+### Installing Skills from ClawHub
 
----
-
-## 🚀 OpenClaw Setup
-
-Complete all steps before arriving.
-
-**1. Verify Node.js & Docker**
 ```bash
-node --version        # v22.14.0 or above
-npm --version         # 10.x or above
-docker --version      # 24.x or above
-docker run hello-world
-git --version
+/skill clawhub search "<query>"   # Search for skills
+/skill clawhub install <name>     # Install a skill
+/skill clawhub list               # List installed skills
+/skill clawhub update --all       # Update all skills
 ```
 
-**2. Install OpenClaw**
+### Restarting the Gateway
+
+If OpenClaw becomes unresponsive:
+
 ```bash
-# macOS / Linux
-curl -fsSL https://openclaw.ai/install.sh | bash
-
-# Windows (PowerShell)
-iwr -useb https://openclaw.ai/install.ps1 | iex
+openclaw gateway --force
 ```
 
-**3. Run onboarding**
-```bash
-openclaw onboard --install-daemon
-```
-
-**4. Verify gateway**
-```bash
-openclaw gateway status
-# Expected: Gateway listening on port 18789
-```
-
-**5. Open dashboard**
-```bash
-openclaw dashboard
-# Opens in browser — if it loads, you're ready ✅
-```
-
----
-
-## 📁 Project Structure
-
-```
-cloud-native-day-pune-2026/
-├── openclaw/       # OpenClaw configs
-├── docker/         # Dockerfiles
-├── deployment/     # Deployment manifests
-├── kubernetes/     # K8s configs
-└── notes/          # Workshop notes
-```
+> Run this in the Code Server terminal or via SSH.
 
 ---
 
@@ -162,15 +186,14 @@ cloud-native-day-pune-2026/
 
 | Issue | Action |
 |:---|:---|
-| Installation error | Arrive at 09:30 AM — mentors available |
-| Node.js issues | [docs.openclaw.ai/install/node](https://docs.openclaw.ai/install/node) |
-| Windows issues | [docs.openclaw.ai/platforms/windows](https://docs.openclaw.ai/platforms/windows) |
+| Instance not ready | Wait up to 5 minutes after deploy |
+| Can't log in | Check credentials on your Vultr instance page |
+| Gateway unresponsive | Run `openclaw gateway --force` in terminal |
+| General setup issues | Arrive at 09:30 AM — mentors available |
 
 ---
 
 ## 🤝 Code of Conduct
-
-All participants must maintain a welcoming, inclusive, and respectful environment.
 
 - Be respectful to speakers and fellow participants
 - Follow mentor instructions
@@ -187,8 +210,8 @@ All participants must maintain a welcoming, inclusive, and respectful environmen
 |:---|:---|
 | 📋 Register | [forms.gle/XfaczLoLoEu71AT78](https://forms.gle/XfaczLoLoEu71AT78) |
 | 📅 Event Page | [ocgroups.dev/cncf/.../event/xavkwq6](https://ocgroups.dev/cncf/group/p5hsakp/event/xavkwq6) |
-| ☁️ Vultr × OpenClaw | [vultr.com/marketplace/apps/openclaw](https://www.vultr.com/marketplace/apps/openclaw/#getting-started) |
-| 📖 OpenClaw Docs | [docs.openclaw.ai](https://docs.openclaw.ai/start/getting-started) |
+| ☁️ Vultr Console | [console.vultr.com](https://console.vultr.com) |
+| 🛒 OpenClaw on Vultr | [vultr.com/marketplace/apps/openclaw](https://www.vultr.com/marketplace/apps/openclaw/#getting-started) |
 
 ---
 
