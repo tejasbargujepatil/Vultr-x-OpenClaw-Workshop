@@ -1,3 +1,4 @@
+
 <div align="center">
 
 <img src="https://img.shields.io/badge/Powered%20by-Vultr-007BFC?style=for-the-badge&logo=vultr&logoColor=white" />
@@ -27,9 +28,8 @@
 - [Agenda](#️-agenda)
 - [Organizer Checklist](#-organizer-checklist)
 - [Pre-Workshop Setup](#️-pre-workshop-setup)
-- [Deploying OpenClaw on Vultr](#-deploying-openclaw-on-vultr)
-- [Using OpenClaw](#-using-openclaw)
-- [Troubleshooting](#️-troubleshooting)
+- [Try It Yourself](#-try-it-yourself)
+- [Vultr Setup](#%EF%B8%8F-vultr-setup)
 - [Code of Conduct](#-code-of-conduct)
 - [Important Links](#-important-links)
 
@@ -37,7 +37,7 @@
 
 ## 🌟 About the Event
 
-**Cloud Native Day Pune 2026** is organised by Cloud Native Pune (CNCF Community Group) in collaboration with **Vultr**.
+**Cloud Native Day Pune 2026** is organized by Cloud Native Pune (CNCF Community Group) in collaboration with **Vultr**.
 
 Full-day in-person conference for developers, SREs, platform engineers, and cloud enthusiasts — technical talks, hands-on workshop, and lightning sessions.
 
@@ -52,7 +52,7 @@ Full-day in-person conference for developers, SREs, platform engineers, and clou
 | `09:30 AM` | Doors open & check-in |
 | `10:00 AM` | Does Security Have a Place in the Cloud Native Galaxy? |
 | `11:00 AM` | Observability for AI |
-| `TBA` | Deploying OpenClaw on Vultr — Hands-on Workshop |
+| `TBA` | Build Your Own AI Agent Workforce with OpenClaw & Hermes Agent on Vultr |
 | `TBA` | Lightning Sessions |
 | `03:00 PM` | Networking & Closing |
 
@@ -84,112 +84,41 @@ Full-day in-person conference for developers, SREs, platform engineers, and clou
 
 ## ⚙️ Pre-Workshop Setup
 
-> Complete before **31 May**. Only a Vultr account is needed — no local installs required.
+This session covers a demonstration of two open-source AI agent frameworks, [OpenClaw](https://www.vultr.com/marketplace/apps/openclaw/) and [Hermes Agent](https://hermes-agent.nousresearch.com/), deployed on Vultr and integrated with messaging channels.
 
-### Required Account
+### 📂 Required Accounts
 
-| Platform | Link | Required |
-|:---|:---|:---:|
-| Vultr | [vultr.com](https://www.vultr.com) | ✅ |
-
-> Create your Vultr account before arriving. That's all you need.
+- Create a [Vultr account](https://www.vultr.com/register/) and redeem your [free credits](https://www.vultr.com/promo/openclaw100).
+- Create an account on a messaging platform. In this workshop we use [Slack](https://slack.com) and [Discord](https://discord.com). Set up a Slack workspace and a Discord server before arriving to experiment along.
 
 ---
 
-## 🚀 Deploying OpenClaw on Vultr
+## 🚀 Try It Yourself
 
-> This is done **during the workshop**. Steps below are for reference.
+Everything shown in the demo is yours to replicate. To fully experiment with the agent capabilities during or after the session, complete the Vultr deployments and channel integrations from the guides below. If you have any questions, get them addressed by the mentors at the venue on **31 May at 9:30 AM**, when they will be available.
 
-**Step 1 — Log in to Vultr**
+### OpenClaw
+- 📖 Deployment via Vultr Marketplace Application: [docs.vultr.com/how-to-use-vultrs-openclaw-marketplace-application](https://docs.vultr.com/how-to-use-vultrs-openclaw-marketplace-application)
+- 💬 Slack integration: [docs.openclaw.ai/channels/slack](https://docs.openclaw.ai/channels/slack)
+- 💬 Discord integration: [docs.openclaw.ai/channels/discord](https://docs.openclaw.ai/channels/discord)
+- 🖥️ Recommended server plan: 2GB RAM / 2 vCPUs for personal use, 8GB RAM / 4 vCPUs for multi-channel deployments
 
-Go to [console.vultr.com](https://console.vultr.com) and log in.
-
----
-
-**Step 2 — Go to Marketplace**
-
-- Click **"Deploy"** in the top nav → Select **"Instances"**
-- Choose the **"Marketplace"** tab
-- Search for **OpenClaw** and select it
-
----
-
-**Step 3 — Configure your instance**
-
-- Choose a server location
-- Select a plan *(minimum: 1 CPU, 1024MB RAM — $6/mo)*
-- Click **Deploy Now**
+### Hermes Agent
+- 📖 Deployment guide: [docs.vultr.com/how-to-deploy-hermes-agent-open-source-self-hosted-ai-agent](https://docs.vultr.com/how-to-deploy-hermes-agent-open-source-self-hosted-ai-agent)
+- ⚡ Provision Vultr Serverless Inference: [docs.vultr.com/products/serverless/inference/provisioning](https://docs.vultr.com/products/serverless/inference/provisioning)
+- 🔗 Use Vultr Inference as model provider: [docs.vultr.com/how-to-deploy-hermes-agent-open-source-self-hosted-ai-agent#use-vultr-serverless-inference-optional](https://docs.vultr.com/how-to-deploy-hermes-agent-open-source-self-hosted-ai-agent#use-vultr-serverless-inference-optional)
+- 💬 Slack integration: [hermes-agent.nousresearch.com/docs/user-guide/messaging/slack](https://hermes-agent.nousresearch.com/docs/user-guide/messaging/slack)
 
 ---
 
-**Step 4 — Wait for deployment**
+## ☁️ Vultr Setup
 
-Allow up to **5 minutes** for the instance to become available.
-
----
-
-**Step 5 — Access OpenClaw**
-
-Once deployed, open your instance link and log in:
-
-```
-Username: clawmine
-Password: (shown on your Vultr instance page)
-```
-
----
-
-**Step 6 — Access Code Server** *(Browser-based VS Code)*
-
-A browser-based VS Code with terminal is included. Launch it from your instance page.
-
-```
-Password: (shown on your Vultr instance page)
-```
-
----
-
-## 💬 Using OpenClaw
-
-### Essential Chat Commands
-
-| Command | Use |
-|:---|:---|
-| `/new` | Start a fresh session |
-| `/compact` | Summarize old messages to free up context |
-| `/status` | Check session info, model, token usage |
-| `/help` | See all available commands |
-| `stop` | Abort current response mid-stream |
-
-### Installing Skills from ClawHub
-
-```bash
-/skill clawhub search "<query>"   # Search for skills
-/skill clawhub install <name>     # Install a skill
-/skill clawhub list               # List installed skills
-/skill clawhub update --all       # Update all skills
-```
-
-### Restarting the Gateway
-
-If OpenClaw becomes unresponsive:
-
-```bash
-openclaw gateway --force
-```
-
-> Run this in the Code Server terminal or via SSH.
-
----
-
-## 🛠️ Troubleshooting
-
-| Issue | Action |
-|:---|:---|
-| Instance not ready | Wait up to 5 minutes after deploy |
-| Can't log in | Check credentials on your Vultr instance page |
-| Gateway unresponsive | Run `openclaw gateway --force` in terminal |
-| General setup issues | Arrive at 09:30 AM — mentors available |
+| Step | Action |
+|:---:|:---|
+| 1. Deploy | Vultr OpenClaw Marketplace Application and Hermes Agent on Vultr Cloud Compute |
+| 2. Config | Vultr Serverless Inference API key, Slack and Discord app and bot tokens |
+| 3. Access | Dashboard and complete onboarding |
+| 4. Explore | Deployment architecture with the facilitator |
 
 ---
 
@@ -217,7 +146,7 @@ openclaw gateway --force
 
 <div align="center">
 
-Organised by **Cloud Native Pune** · Powered by **Vultr**
+Organized by **Cloud Native Pune** · Powered by **Vultr**
 
 <img src="https://img.shields.io/badge/Powered%20by-Vultr-007BFC?style=for-the-badge&logo=vultr&logoColor=white"/>
 
